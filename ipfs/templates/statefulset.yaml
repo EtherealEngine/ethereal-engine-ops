@@ -125,7 +125,7 @@ spec:
     - metadata:
         name: {{ include "ipfs.storageClusterName" . }}
       spec:
-        storageClassName: standard
+        # storageClassName: standard
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
@@ -133,7 +133,7 @@ spec:
     - metadata:
         name: {{ include "ipfs.storageIpfsName" . }}
       spec:
-        storageClassName: standard
+        # storageClassName: standard
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
