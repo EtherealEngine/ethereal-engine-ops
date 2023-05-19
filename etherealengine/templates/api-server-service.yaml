@@ -11,7 +11,11 @@ spec:
     - port: {{ .Values.api.service.port }}
       targetPort: {{ .Values.api.service.port }}
       protocol: TCP
-      name: http
+      name: api-http
+    - port: {{ .Values.client.service.port }}
+      targetPort: {{ .Values.client.service.port }}
+      protocol: TCP
+      name: client-http
   selector:
     {{- include "etherealengine.api.selectorLabels" . | nindent 4 }}
 {{- end -}}

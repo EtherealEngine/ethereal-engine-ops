@@ -1,10 +1,11 @@
-{{- if and (.Values.client).enabled (ne (((.Values.client).ingress).disabled | default "") "true") -}}
-{{- $fullName := include "etherealengine.client.fullname" . -}}
+{{- if and (.Values.client).enabled (ne (((.Values.client).ingress).disabled | default false) true) -}}
+{{- $clientFullName := include "etherealengine.client.fullname" . -}}
+{{- $apiFullName := include "etherealengine.api.fullname" . -}}
 {{- $svcPort := .Values.client.service.port -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ $fullName }}
+  name: {{ $clientFullName }}
   labels:
     {{- include "etherealengine.client.labels" . | nindent 4 }}
   {{- with .Values.client.ingress.annotations }}
@@ -32,7 +33,11 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ $fullName }}
+                {{- if $.Values.client.serveFromApi }}
+                name: {{ $apiFullName }}
+                {{ else }}
+                name: {{ $clientFullName }}
+                {{- end }}
                 port:
                   number: {{ $svcPort }}
         {{- end }}

@@ -41,6 +41,10 @@ spec:
           env:
             - name: KUBERNETES
               value: "true"
+            {{ if .Values.client.serveFromApi }}
+            - name: SERVE_CLIENT_FROM_API
+              value: "true"
+            {{ end }}
             {{ if .Values.sql }}
             - name: MYSQL_USER
               value: {{ .Values.sql.user }}
@@ -115,14 +119,14 @@ spec:
                 - cat
                 - ./builder-started.txt
             initialDelaySeconds: 10
-            periodSeconds: 30
+            periodSeconds: 60
           readinessProbe:
             exec:
               command:
                 - cat
                 - ./builder-started.txt
             initialDelaySeconds: 10
-            periodSeconds: 30
+            periodSeconds: 60
           resources:
             {{- toYaml .Values.builder.resources | nindent 12 }}
           volumeMounts:

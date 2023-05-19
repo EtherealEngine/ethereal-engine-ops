@@ -43,6 +43,10 @@ spec:
               value: "api"
             - name: KUBERNETES
               value: "true"
+            {{ if .Values.client.serveFromApi }}
+            - name: SERVE_CLIENT_FROM_API
+              value: "true"
+            {{ end }}
             {{ if .Values.sql }}
             - name: MYSQL_USER
               value: {{ .Values.sql.user }}
@@ -104,18 +108,21 @@ spec:
             - name: BUILDER_REPOSITORY
               value: {{ .Values.builder.image.repository }}
           ports:
-            - name: http
+            - name: api-http
               containerPort: 3030
+              protocol: TCP
+            - name: client-http
+              containerPort: 3000
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /healthcheck
-              port: http
+              port: api-http
             initialDelaySeconds: 10
           readinessProbe:
             httpGet:
               path: /healthcheck
-              port: http
+              port: api-http
             initialDelaySeconds: 10
           resources:
             {{- toYaml .Values.api.resources | nindent 12 }}

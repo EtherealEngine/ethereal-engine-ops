@@ -1,4 +1,4 @@
-{{- if (.Values.client).enabled -}}
+{{- if and ((.Values.client).enabled) (ne (.Values.client).serveFromApi true) -}}
 apiVersion: v1
 kind: Service
 metadata:

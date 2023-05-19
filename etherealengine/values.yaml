@@ -53,6 +53,8 @@ client:
   podSecurityContext: {}
   securityContext: {}
 
+  serveFromApi: false
+
   extraEnv:
     SITE_TITLE: Ethereal Engine
     SITE_DESC: Connected Worlds for Everyone
