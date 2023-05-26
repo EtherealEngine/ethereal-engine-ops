@@ -2,6 +2,7 @@ client:
   extraEnv:
     APP_LOGO: "./logo.svg"
     APP_TITLE: EtherealEngine
+    APP_URL: https://local.etherealengine.org
     HOST_PORT: "3000"
     NODE_ENV: production
     SITE_DESC: Connected Worlds for Everyone
