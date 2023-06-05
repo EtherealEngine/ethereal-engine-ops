@@ -1,4 +1,4 @@
-{{- if and (.Values.client).enabled (ne (((.Values.client).ingress).disabled | default false) true) -}}
+{{- if and (.Values.client).enabled (ne (((.Values.client).ingress).disabled | default false) true) (ne (((.Values.builder.extraEnv).SERVE_CLIENT_FROM_STORAGE_PROVIDER) | default "false") "true") -}}
 {{- $clientFullName := include "etherealengine.client.fullname" . -}}
 {{- $apiFullName := include "etherealengine.api.fullname" . -}}
 {{- $svcPort := .Values.client.service.port -}}
