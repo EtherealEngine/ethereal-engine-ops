@@ -15,6 +15,9 @@ rules:
       - deployments
       - jobs
       - secrets
+      - serviceaccounts
+      - configmaps
+      - services
     verbs:
       - get
       - list
@@ -62,4 +65,11 @@ rules:
       - get
       - list
       - watch
+  - apiGroups:
+      - "rbac.authorization.k8s.io"
+    resources:
+      - clusterroles
+      - clusterrolebindings
+    verbs:
+      - get
 {{- end }}
