@@ -4,6 +4,9 @@ rbac:
   create: true
 
 controller:
+  admissionWebhooks:
+    certManager:
+      enabled: false
   config:
     ssl-redirect: "false"
     server-snippet: |
@@ -15,6 +18,8 @@ controller:
     http: 80
     https: 443
     special: 8000
+  opentelemetry:
+    enabled: false
   service:
     targetPorts:
       http: http
