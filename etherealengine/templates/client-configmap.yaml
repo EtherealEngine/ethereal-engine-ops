@@ -1,4 +1,4 @@
-{{- if and (.Values.client).enabled (ne (.Values.client).serveFromApi true) -}}
+{{- if and (.Values.client).enabled (ne (.Values.client).serveFromApi true) (ne (((.Values.builder.extraEnv).SERVE_CLIENT_FROM_STORAGE_PROVIDER) | default "false") "true") -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
