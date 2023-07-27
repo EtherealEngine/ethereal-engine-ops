@@ -125,8 +125,8 @@ agones:
       serviceType: NodePort
     generateTLS: true
   image:
-    registry: gcr.io/agones-images
-    tag: 1.28.0
+    registry: us-docker.pkg.dev/agones-images/release
+    tag: 1.33.0
     controller:
       name: agones-controller
       pullPolicy: IfNotPresent
