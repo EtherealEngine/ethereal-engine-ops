@@ -72,4 +72,10 @@ rules:
       - clusterrolebindings
     verbs:
       - get
+      - list
+      - watch
+      - create
+      - patch
+      - update
+      - delete
 {{- end }}
