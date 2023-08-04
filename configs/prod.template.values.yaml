@@ -121,6 +121,7 @@ api:
     STORAGE_S3_DEV_MODE: dev
     PRESIGNED_URL_EXPIRATION_DURATION: "3600"
     BUILDER_REPOSITORY: "<BUILDER_ECR_REPOSITORY_FULLNAME"
+    VITE_FILE_SERVER: https://<CLOUDFRONT_DOMAIN>
   image:
     repository: <repository_name>
   service:
@@ -281,6 +282,7 @@ instanceserver:
     STORAGE_S3_STATIC_RESOURCE_BUCKET: <S3_STATIC_RESOURCES_BUCKET_NAME>
     CERT: certs/cert.pem
     KEY: certs/key.pem
+    VITE_FILE_SERVER: https://<CLOUDFRONT_DOMAIN>
   ingress:
     annotations:
       kubernetes.io/ingress.class: nginx
