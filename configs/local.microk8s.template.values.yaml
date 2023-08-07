@@ -100,7 +100,7 @@ api:
     STORAGE_AWS_ACCESS_KEY_SECRET: "password" #<S3_USER_SECRET_KEY>
     STORAGE_S3_ENDPOINT: https://localhost:9000 #<S3_ENDPOINT>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-microk8s-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: <S3_BUCKET_NAME> # etherealengine-microk8s-static-resources
     STORAGE_S3_DEV_MODE: local
     VITE_APP_HOST: local.etherealengine.org
     VITE_APP_PORT: "3000"
@@ -218,7 +218,7 @@ media:
     STORAGE_AWS_ACCESS_KEY_SECRET: "password" #<S3_USER_SECRET_KEY>
     STORAGE_S3_ENDPOINT: https://10.0.1.1:9000 #<S3_ENDPOINT>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-microk8s-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: <S3_BUCKET_NAME> # etherealengine-microk8s-static-resources
     STORAGE_S3_DEV_MODE: local
     VITE_FILE_SERVER: https://localhost:8642/etherealengine-microk8s-static-resources
   image:
@@ -272,7 +272,7 @@ instanceserver:
     STORAGE_AWS_ACCESS_KEY_SECRET: "password" #<S3_USER_SECRET_KEY>
     STORAGE_S3_ENDPOINT: https://10.0.1.1:9000 #<S3_ENDPOINT>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-microk8s-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: <S3_BUCKET_NAME> # etherealengine-microk8s-static-resources
     STORAGE_S3_DEV_MODE: local
     TS_NODE_IGNORE: (?:^|\/)node_modules\/(?!(@etherealengine))
     VITE_FILE_SERVER: https://localhost:8642/etherealengine-microk8s-static-resources
