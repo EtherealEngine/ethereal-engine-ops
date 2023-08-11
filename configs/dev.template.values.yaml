@@ -380,7 +380,6 @@ taskserver:
 
 builder:
   extraEnv:
-    CACHE_BUCKET_STEM: <S3_CACHE_NAME_STEM>
     NODE_ENV: production
     RELEASE_NAME: <RELEASE_NAME>
     EKS_AWS_ACCESS_KEY: <EKS_USER_AWS_ACCESS_KEY>
