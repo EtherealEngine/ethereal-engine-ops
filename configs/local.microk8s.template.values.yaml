@@ -9,7 +9,7 @@ client:
     SITE_TITLE: Ethereal Engine
     VITE_APP_HOST: local.etherealengine.org
     VITE_APP_PORT: "3000"
-    VITE_FILE_SERVER: https://localhost:8642/etherealengine-microk8s-static-resources
+    VITE_FILE_SERVER: https://localhost:8642
     VITE_SERVER_HOST: api-local.etherealengine.org
     VITE_SERVER_PORT: "3030"
     VITE_INSTANCESERVER_HOST: instanceserver-local.etherealengine.org
@@ -104,7 +104,7 @@ api:
     STORAGE_S3_DEV_MODE: local
     VITE_APP_HOST: local.etherealengine.org
     VITE_APP_PORT: "3000"
-    VITE_FILE_SERVER: https://localhost:8642/etherealengine-microk8s-static-resources
+    VITE_FILE_SERVER: https://localhost:8642
     VITE_SERVER_HOST: api-local.etherealengine.org
     VITE_SERVER_PORT: "3030"
     VITE_INSTANCESERVER_HOST: instanceserver-local.etherealengine.org
@@ -220,7 +220,7 @@ media:
     STORAGE_S3_REGION: <S3_REGION>
     STORAGE_S3_STATIC_RESOURCE_BUCKET: <S3_BUCKET_NAME> # etherealengine-microk8s-static-resources
     STORAGE_S3_DEV_MODE: local
-    VITE_FILE_SERVER: https://localhost:8642/etherealengine-microk8s-static-resources
+    VITE_FILE_SERVER: https://10.0.1.1:8642
   image:
     repository: localhost:32000/etherealengine
     pullPolicy: IfNotPresent
@@ -275,7 +275,7 @@ instanceserver:
     STORAGE_S3_STATIC_RESOURCE_BUCKET: <S3_BUCKET_NAME> # etherealengine-microk8s-static-resources
     STORAGE_S3_DEV_MODE: local
     TS_NODE_IGNORE: (?:^|\/)node_modules\/(?!(@etherealengine))
-    VITE_FILE_SERVER: https://localhost:8642/etherealengine-microk8s-static-resources
+    VITE_FILE_SERVER: https://10.0.1.1:8642
   ingress:
     disabled: false
     host: instanceserver-local.etherealengine.org
@@ -325,7 +325,7 @@ builder:
     VITE_APP_PORT: "3000"
     VITE_SERVER_HOST: api-local.etherealengine.org
     VITE_SERVER_PORT: "3030"
-    VITE_FILE_SERVER: https://localhost:8642/etherealengine-microk8s-static-resources
+    VITE_FILE_SERVER: https://localhost:8642
     VITE_INSTANCESERVER_HOST: instanceserver-local.etherealengine.org
     VITE_INSTANCESERVER_PORT: "3031"
     VITE_ROOT_REDIRECT: "false"
