@@ -862,7 +862,8 @@ spec:
           protocol: UDP
       health:
         initialDelaySeconds: 10
-        periodSeconds: 15
+        periodSeconds: 30
+        failureThreshold: 6
         # Parameters for game server sidecar
         # sdkServer:
         # sdkServer log level parameter has three options:

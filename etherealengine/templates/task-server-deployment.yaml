@@ -110,11 +110,17 @@ spec:
               path: /healthcheck
               port: http
             initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 6
           readinessProbe:
             httpGet:
               path: /healthcheck
               port: http
             initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 6
           resources:
             {{- toYaml .Values.taskserver.resources | nindent 12 }}
       {{- with .Values.taskserver.nodeSelector }}
