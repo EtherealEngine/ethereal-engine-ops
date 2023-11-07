@@ -29,6 +29,10 @@ client:
     type: NodePort
 domain: etherealengine.org
 clusterType: microk8s
+etherealEngine:
+  # This is the path to your local Ethereal Engine folder that you want to run.
+  # It could be something similar to /home//<OS_USER_NAME>/<ENGINE_FOLDER>
+  localPath: '<EtherealEngine_Local_Folder>'
 sql:
   database: etherealengine
   password: password
@@ -92,7 +96,7 @@ api:
     SMTP_PORT: "465"
     SMTP_SECURE: "true"
     SMTP_USER: <SMTP_USER_ID>
-    STORAGE_PROVIDER: s3
+    STORAGE_PROVIDER: s3 #local
     STORAGE_PROVIDER_EXTERNAL_ENDPOINT: "https://10.0.1.1:9000"
     LOCAL_STORAGE_PROVIDER: "localhost:8642"
     LOCAL_STORAGE_PROVIDER_PORT: "8642"
