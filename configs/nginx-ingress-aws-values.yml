@@ -4,6 +4,7 @@ rbac:
   create: true
 
 controller:
+  allowSnippetAnnotations: true
   admissionWebhooks:
     certManager:
       enabled: false
