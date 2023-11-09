@@ -53,7 +53,9 @@ spec:
     metadata:
       labels:
         {{- include "etherealengine.instanceserver.labels" . | nindent 8 }}
+        {{- if .Values.instanceserver.labels }}
         {{- toYaml .Values.instanceserver.labels | nindent 8 }}
+        {{- end }}
     # InstanceServer specification
     spec:
       ports:
