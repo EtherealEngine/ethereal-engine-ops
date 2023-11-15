@@ -100,7 +100,7 @@ agones:
       failureThreshold: 3
       timeoutSeconds: 1
   allocator:
-    install: false
+    install: true
     healthCheck:
       initialDelaySeconds: 3
       periodSeconds: 3
@@ -126,7 +126,7 @@ agones:
     generateTLS: true
   image:
     registry: us-docker.pkg.dev/agones-images/release
-    tag: 1.35.0
+    tag: 1.33.0
     controller:
       name: agones-controller
       pullPolicy: IfNotPresent
