@@ -126,9 +126,12 @@ agones:
     generateTLS: true
   image:
     registry: us-docker.pkg.dev/agones-images/release
-    tag: 1.33.0
+    tag: 1.35.0
     controller:
       name: agones-controller
+      pullPolicy: IfNotPresent
+    extensions:
+      name: agones-extensions
       pullPolicy: IfNotPresent
     sdk:
       name: agones-sdk
@@ -143,8 +146,15 @@ agones:
     allocator:
       name: agones-allocator
       pullPolicy: IfNotPresent
-
-
+    extensions:
+      tolerations:
+      - key: "agones.dev/agones-system"
+        operator: "Equal"
+        value: "true"
+        effect: "NoExecute"
+      generateTLS: true
+      disableSecret: false
+      
 gameservers:
   namespaces:
     - default
