@@ -126,7 +126,7 @@ agones:
     generateTLS: true
   image:
     registry: us-docker.pkg.dev/agones-images/release
-    tag: 1.35.0
+    tag: 1.36.0
     controller:
       name: agones-controller
       pullPolicy: IfNotPresent
