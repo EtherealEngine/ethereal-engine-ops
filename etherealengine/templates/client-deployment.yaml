@@ -106,7 +106,19 @@ spec:
             initialDelaySeconds: 10
           resources:
             {{- toYaml .Values.client.resources | nindent 12 }}
+          {{ if eq .Values.api.extraEnv.STORAGE_PROVIDER "local" }}
+          volumeMounts:
+            - mountPath: /app/packages
+              name: file-local-mount
+          {{- end }}
       {{- with .Values.client.nodeSelector }}
+      {{ if eq .Values.api.extraEnv.STORAGE_PROVIDER "local" }}
+      volumes:
+        - name: file-local-mount
+          hostPath:
+            path: $({{ .Values.etherealEngine.localPath }}/packages)
+            type: Directory
+      {{- end }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}

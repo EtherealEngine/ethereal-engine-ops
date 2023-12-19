@@ -109,6 +109,18 @@ spec:
             initialDelaySeconds: 10
           resources:
             {{- toYaml .Values.media.resources | nindent 12 }}
+          {{ if eq .Values.api.extraEnv.STORAGE_PROVIDER "local" }}
+          volumeMounts:
+            - mountPath: /app/packages
+              name: file-local-mount
+          {{- end }}
+      {{ if eq .Values.api.extraEnv.STORAGE_PROVIDER "local" }}
+      volumes:
+        - name: file-local-mount
+          hostPath:
+            path: $({{ .Values.etherealEngine.localPath }}/packages)
+            type: Directory
+      {{- end }}
       initContainers:
         - name: init-redis
           image: busybox:1.28
