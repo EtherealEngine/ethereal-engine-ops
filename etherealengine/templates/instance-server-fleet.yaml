@@ -877,6 +877,10 @@ spec:
       # The InstanceServer's Pod template
       template:
         spec:
+        {{- with .Values.instanceserver.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml . | nindent 10 }}
+        {{- end }}
           serviceAccountName: {{ include "etherealengine.instanceserver.serviceAccountName" . }}
           {{- $releaseName := .Release.Name }}
           {{ if not (empty .Values.release) }}
