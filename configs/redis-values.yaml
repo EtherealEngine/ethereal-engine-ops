@@ -7,7 +7,7 @@ master:
               - key: eks.amazonaws.com/nodegroup
                 operator: In
                 values:
-                  - ng-redis-1
+                  - ng-demo-redis-1
 replica:
   affinity:
     nodeAffinity:
@@ -17,4 +17,4 @@ replica:
               - key: eks.amazonaws.com/nodegroup
                 operator: In
                 values:
-                  - ng-redis-1
+                  - ng-demo-redis-1
