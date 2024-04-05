@@ -16,7 +16,7 @@ client:
 
   replicaCount: 1
   image:
-    repository: lagunalabs/etherealengine
+    repository: etherealengine/etherealengine-dev
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -69,7 +69,7 @@ api:
 
   replicaCount: 1
   image:
-    repository: lagunalabs/etherealengine
+    repository: etherealengine/etherealengine-dev
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -170,7 +170,7 @@ media:
 
   replicaCount: 1
   image:
-    repository: lagunalabs/etherealengine
+    repository: etherealengine/etherealengine-dev
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -258,7 +258,7 @@ instanceserver:
 
   replicaCount: 1
   image:
-    repository: lagunalabs/etherealengine
+    repository: etherealengine/etherealengine-dev
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -303,7 +303,7 @@ taskserver:
 
   replicaCount: 1
   image:
-    repository: lagunalabs/etherealengine
+    repository: etherealengine/etherealengine-dev
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -321,6 +321,32 @@ taskserver:
   service:
     type: ClusterIP
     port: 3030
+
+  serviceAccount:
+    create: true
+    annotations: {}
+    name:
+
+batchinvalidator:
+  enabled: true
+  name: etherealengine-batchinvalidator
+
+  replicaCount: 1
+  image:
+    repository: etherealengine/etherealengine-dev
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  imagePullSecrets: []
+  nameOverride: ""
+  fullnameOverride: ""
+
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+  podSecurityContext: {}
+  securityContext: {}
 
   serviceAccount:
     create: true

@@ -27,7 +27,11 @@ Expand the name of the chart.
 {{- end -}}
 
 {{- define "etherealengine.testbot.name" -}}
-{{- default .Chart.Name (.Values.testbot).nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- default .Chart.Name .Values.testbot.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{- define "etherealengine.batchinvalidator.name" -}}
+{{- default .Chart.Name .Values.batchinvalidator.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 
@@ -99,6 +103,14 @@ If release name contains chart name it will be used as a full name.
 {{- .Values.testbot.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
 {{- printf "%s-%s" .Release.Name (.Values.testbot).name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
+
+{{- define "etherealengine.batchinvalidator.fullname" -}}
+{{- if .Values.batchinvalidator.fullnameOverride -}}
+{{- .Values.batchinvalidator.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- printf "%s-%s" .Release.Name .Values.batchinvalidator.name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 {{- end -}}
 
@@ -247,6 +259,27 @@ Selector labels
 app.kubernetes.io/name: {{ include "etherealengine.testbot.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: testbot
+{{- end -}}
+
+{{/*
+Common labels
+*/}}
+{{- define "etherealengine.batchinvalidator.labels" -}}
+helm.sh/chart: {{ include "etherealengine.chart" . }}
+{{ include "etherealengine.batchinvalidator.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
+
+{{/*
+Selector labels
+*/}}
+{{- define "etherealengine.batchinvalidator.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "etherealengine.batchinvalidator.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/component: batchinvalidator
 {{- end -}}
 
 
