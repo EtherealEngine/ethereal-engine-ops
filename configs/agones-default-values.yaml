@@ -100,7 +100,7 @@ agones:
       failureThreshold: 3
       timeoutSeconds: 1
   allocator:
-    install: true
+    install: false
     healthCheck:
       initialDelaySeconds: 3
       periodSeconds: 3
