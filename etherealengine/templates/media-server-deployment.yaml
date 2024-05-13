@@ -83,9 +83,9 @@ spec:
             - name: REDIS_ENABLED
               value: "true"
             - name: REDIS_ADDRESS
-              value: "$({{ $releaseName | upper }}_REDIS_MASTER_SERVICE_HOST)"
+              value: "$({{ $releaseName | upper | replace "-" "_" }}_REDIS_MASTER_SERVICE_HOST)"
             - name: REDIS_PORT
-              value: "$({{ $releaseName | upper }}_REDIS_MASTER_SERVICE_PORT)"
+              value: "$({{ $releaseName | upper | replace "-" "_" }}_REDIS_MASTER_SERVICE_PORT)"
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -115,9 +115,9 @@ spec:
           command: [ 'sh', '-c', 'until (printf "AUTH $REDIS_PASSWORD\r\nPING\r\n";) | nc $REDIS_ADDRESS $REDIS_PORT ; do echo waiting for redis-master; sleep 2; done' ]
           env:
             - name: REDIS_ADDRESS
-              value: "$({{ $releaseName | upper }}_REDIS_MASTER_SERVICE_HOST)"
+              value: "$({{ $releaseName | upper | replace "-" "_" }}_REDIS_MASTER_SERVICE_HOST)"
             - name: REDIS_PORT
-              value: "$({{ $releaseName | upper }}_REDIS_MASTER_SERVICE_PORT)"
+              value: "$({{ $releaseName | upper | replace "-" "_" }}_REDIS_MASTER_SERVICE_PORT)"
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
