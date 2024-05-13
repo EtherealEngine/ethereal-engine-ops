@@ -328,7 +328,7 @@ taskserver:
     name:
 
 batchinvalidator:
-  enabled: true
+  enabled: false
   name: etherealengine-batchinvalidator
 
   replicaCount: 1
