@@ -136,6 +136,8 @@ spec:
           volumeMounts:
             - mountPath: /app/packages/server/upload
               name: file-server
+            - mountPath: /app/packages
+              name: file-local-mount
           {{- end }}
       {{ if eq .Values.api.extraEnv.STORAGE_PROVIDER "local" }}
       volumes:
@@ -149,6 +151,10 @@ spec:
             path: {{ .Values.api.fileServer.hostUploadFolder }}
             type: DirectoryOrCreate
         {{- end }}
+        - name: file-local-mount
+          hostPath:
+            path: $({{ .Values.etherealEngine.localPath }}/packages)
+            type: Directory
       {{- end }}
       initContainers:
         - name: init-redis
