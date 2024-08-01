@@ -22,6 +22,7 @@ controller:
   opentelemetry:
     enabled: false
   service:
+    externalTrafficPolicy: Local
     targetPorts:
       http: http
       https: special # SSL termination at the load balancer
@@ -32,5 +33,5 @@ controller:
       service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "tcp"
       service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
       service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+      service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
       service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "<ACM Certificate ARN for SSL>"
-
