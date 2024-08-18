@@ -1,4 +1,4 @@
-Thank you for installing Ethereal Engine
+Thank you for installing Infinite Reality Engine
 
 1. Dashboard frontend is running on:
 {{- if .Values.client.ingress.enabled }}
@@ -63,5 +63,5 @@ Thank you for installing Ethereal Engine
 {{- end }}
 
 We would love to hear your feedback:
-- contact us on https://www.ir-engine.org/
+- contact us on https://www.etherealengine.org/
 - join our Discord on https://discord.gg/xrf

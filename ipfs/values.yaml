@@ -44,7 +44,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: ipfs.ir-engine.org
+    - host: ipfs.etherealengine.org
       paths:
         - path: /
           pathType: ImplementationSpecific

@@ -56,7 +56,7 @@ client:
   serveFromApi: false
 
   extraEnv:
-    SITE_TITLE: Ethereal Engine
+    SITE_TITLE: Infinite Reality Engine
     SITE_DESC: Connected Worlds for Everyone
     APP_ENV: production
 

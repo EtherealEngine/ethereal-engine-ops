@@ -30,7 +30,7 @@ services:
       context: ../xrsocial-client
     image: ir-engine/client
     environment:
-        SITE_TITLE: Ethereal Engine
+        SITE_TITLE: Infinite Reality Engine
         SITE_DESC: Connected Worlds for Everyone
         APP_ENV: dev
     restart: always

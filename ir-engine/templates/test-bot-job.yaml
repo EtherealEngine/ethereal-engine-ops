@@ -75,7 +75,7 @@ spec:
                 echo "Instanceserver ready count: $instanceserverCount"
             done
 
-            echo "Ethereal Engine is now ready"
+            echo "Infinite Reality Engine is now ready"
             exit 0
         env:
           - name: RELEASE_NAME

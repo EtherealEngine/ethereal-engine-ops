@@ -1,3 +1,3 @@
 # ethereal-engine-ops
 
-Templates and Charts for Ethereal Engine
+Templates and Charts for Infinite Reality Engine

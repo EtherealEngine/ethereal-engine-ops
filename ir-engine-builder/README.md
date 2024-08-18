@@ -1,6 +1,6 @@
-# Ethereal Engine
+# Infinite Reality Engine
 
-[Ethereal Engine](https://ir-engine.org/) Social Gatherings on the Web.
+[Infinite Reality Engine](https://etherealengine.org/) Social Gatherings on the Web.
 
 ## TL;DR
 
@@ -11,7 +11,7 @@ helm install my-release ir-engine/ir-engine
 
 ## Introduction
 
-This chart creates a [Ethereal Engine](https://ir-engine.org/) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart creates a [Infinite Reality Engine](https://etherealengine.org/) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 [***In Progress***] This chart has been tested to work with NGINX Ingress, cert-manager, fluentd and Prometheus on top of AWS EKS.
 
@@ -33,8 +33,8 @@ helm install my-release ir-engine/ir-engine            # Helm 3
 helm install --name my-release ir-engine/ir-engine     # Helm 2
 ```
 
-Ethereal Engine
-The command deploys Ethereal Engine on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
+Infinite Reality Engine
+The command deploys Infinite Reality Engine on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
 
 > **Tip**: List all releases using `helm list`
 
@@ -50,7 +50,7 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Configuration
 
-The following table lists the configurable parameters of the Ethereal Engine chart and their default values.
+The following table lists the configurable parameters of the Infinite Reality Engine chart and their default values.
 
 | Key                              | Type | Default | Description                |
 |----------------------------------|------|---------|----------------------------|
@@ -118,7 +118,7 @@ helm install --name my-release -f values.yaml ir-engine/ir-engine
 
 > **Tip**: You can use the default <values.yaml>
 
-## Ethereal Engine Additional Configurations
+## Infinite Reality Engine Additional Configurations
 
 This section lists configuration specific for server, client components.
 
@@ -126,7 +126,7 @@ This section lists configuration specific for server, client components.
 |-----|------|---------|-------------|
 | client.extraEnv.NODE_ENV | string | `"development"` |  |
 | client.extraEnv.SITE_DESC | string | `"Connected Worlds for Everyone"` |  |
-| client.extraEnv.SITE_TITLE | string | `"Ethereal Engine"` |  |
+| client.extraEnv.SITE_TITLE | string | `"Infinite Reality Engine"` |  |
 | rts.extraEnv.NAF_LISTEN_PORT | string | `"8081"` |  |
 | server.extraEnv.APP_HOST | string | `"http://api.ir-engine.local/"` |  |
 | server.extraEnv.FACEBOOK_CALLBACK_URL | string | `"http://127.0.0.1:3000/oauth/facebook"` |  |
