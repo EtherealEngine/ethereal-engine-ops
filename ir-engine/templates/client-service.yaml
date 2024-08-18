@@ -1,0 +1,17 @@
+{{- if and ((.Values.client).enabled) (ne (.Values.client).serveFromApi true) (ne (((.Values.builder.extraEnv).SERVE_CLIENT_FROM_STORAGE_PROVIDER) | default "false") "true") -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "ir-engine.client.fullname" . }}
+  labels:
+    {{- include "ir-engine.client.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.client.service.type }}
+  ports:
+    - port: {{ .Values.client.service.port }}
+      targetPort: {{ .Values.client.service.port }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "ir-engine.client.selectorLabels" . | nindent 4 }}
+{{- end -}}

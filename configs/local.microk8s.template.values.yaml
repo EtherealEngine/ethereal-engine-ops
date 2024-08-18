@@ -2,35 +2,35 @@ client:
   extraEnv:
     APP_LOGO: "./logo.svg"
     APP_TITLE: EtherealEngine
-    APP_URL: https://local.etherealengine.org
+    APP_URL: https://local.ir-engine.org
     HOST_PORT: "3000"
     NODE_ENV: production
     SITE_DESC: Connected Worlds for Everyone
     SITE_TITLE: Ethereal Engine
-    VITE_APP_HOST: local.etherealengine.org
+    VITE_APP_HOST: local.ir-engine.org
     VITE_APP_PORT: "3000"
-    VITE_FILE_SERVER: https://localhost:9000/etherealengine-microk8s-static-resources
-    VITE_SERVER_HOST: api-local.etherealengine.org
+    VITE_FILE_SERVER: https://localhost:9000/ir-engine-microk8s-static-resources
+    VITE_SERVER_HOST: api-local.ir-engine.org
     VITE_SERVER_PORT: "3030"
-    VITE_INSTANCESERVER_HOST: instanceserver-local.etherealengine.org
+    VITE_INSTANCESERVER_HOST: instanceserver-local.ir-engine.org
     VITE_INSTANCESERVER_PORT: "3031"
   image:
-    repository: localhost:32000/etherealengine
+    repository: localhost:32000/ir-engine
     pullPolicy: IfNotPresent
   ingress:
     annotations:
       kubernetes.io/ingress.class: public
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     hosts:
-      - host: local.etherealengine.org
+      - host: local.ir-engine.org
         paths:
           - /
   service:
     type: NodePort
-domain: etherealengine.org
+domain: ir-engine.org
 clusterType: microk8s
 sql:
-  database: etherealengine
+  database: ir-engine
   password: password
   user: server
   host: 10.0.1.1
@@ -46,46 +46,46 @@ api:
         secret_access_key: password
       s3:
         endpoint: https://10.0.1.1:9000
-        static_resource_bucket: etherealengine-microk8s-static-resources
+        static_resource_bucket: ir-engine-microk8s-static-resources
       sns:
         access_key_id: <SNS_USER_ACCESS_KEY>
         application_id: <SNS_APPLICATION_ID>
         region: <SNS_REGION>
         secret_access_key: <SNS_USER_SECRET_KEY>
         sender_id: <SNS_SENDER_ID>
-    host: https://local.etherealengine.org/
+    host: https://local.ir-engine.org/
   extraEnv:
-    APP_HOST: local.etherealengine.org
-    APP_URL: https://local.etherealengine.org
+    APP_HOST: local.ir-engine.org
+    APP_URL: https://local.ir-engine.org
     AUTH_SECRET: <AUTH_SECRET_UUID_OR_SIMILAR>
     ELASTIC_HOST: "http://10.0.1.1:9200"
     AWS_SMS_ACCESS_KEY_ID: <SNS_USER_ACCESS_KEY>
     AWS_SMS_REGION: <SNS_REGION>
     AWS_SMS_SECRET_ACCESS_KEY: <SNS_USER_SECRET_KEY>
     AWS_SMS_TOPIC_ARN: arn:aws:sns:<SNS_REGION>:<AWS_ACCOUNT_ID>:<SNS_TOPIC_NAME>
-    CLIENT_ADDRESS: https://local.etherealengine.org
+    CLIENT_ADDRESS: https://local.ir-engine.org
     CERT: certs/cert.pem
     KEY: certs/key.pem
     CORS_SERVER_PORT: "3036"
-    FACEBOOK_CALLBACK_URL: https://local.etherealengine.org/auth/oauth/facebook
+    FACEBOOK_CALLBACK_URL: https://local.ir-engine.org/auth/oauth/facebook
     FACEBOOK_CLIENT_ID: "<FACEBOOK_CLIENT_ID>"
     FACEBOOK_CLIENT_SECRET: "<FACEBOOK_CLIENT_SECRET>"
     FORCE_DB_REFRESH: "false"
-    INSTANCESERVER_DOMAIN: instanceserver-local.etherealengine.org
-    GITHUB_CALLBACK_URL: https://local.etherealengine.org/auth/oauth/github
+    INSTANCESERVER_DOMAIN: instanceserver-local.ir-engine.org
+    GITHUB_CALLBACK_URL: https://local.ir-engine.org/auth/oauth/github
     GITHUB_CLIENT_ID: "<GITHUB_CLIENT_ID>"
     GITHUB_CLIENT_SECRET: "<GITHUB_CLIENT_SECRET>"
-    GOOGLE_CALLBACK_URL: https://local.etherealengine.org/auth/oauth/google
+    GOOGLE_CALLBACK_URL: https://local.ir-engine.org/auth/oauth/google
     GOOGLE_CLIENT_ID: "<GOOGLE_CLIENT_ID>"
     GOOGLE_CLIENT_SECRET: "<GOOGLE_CLIENT_SECRET>"
     LOCAL: "true"
     MAGICLINK_EMAIL_SUBJECT: Login to Ethereal Engine
-    MAIL_FROM: info@login.etherealengine.com
+    MAIL_FROM: info@login.ir-engine.com
     SERVE_CLIENT_FROM_STORAGE_PROVIDER: "true"
-    SERVER_HOST: "api-local.etherealengine.org"
+    SERVER_HOST: "api-local.ir-engine.org"
     SERVER_MODE: "api"
     SERVER_PORT: "3030"
-    SMTP_FROM_EMAIL: info@login.etherealengine.com
+    SMTP_FROM_EMAIL: info@login.ir-engine.com
     SMTP_FROM_NAME: noreply
     SMTP_HOST: email-smtp.<SMTP_REGION>.amazonaws.com
     SMTP_PASS: <SMTP_PASSWORD>
@@ -100,14 +100,14 @@ api:
     STORAGE_AWS_ACCESS_KEY_SECRET: "password" #<S3_USER_SECRET_KEY>
     STORAGE_S3_ENDPOINT: https://localhost:9000 #<S3_ENDPOINT>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-microk8s-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: ir-engine-microk8s-static-resources #<S3_BUCKET_NAME>
     STORAGE_S3_DEV_MODE: local
-    VITE_APP_HOST: local.etherealengine.org
+    VITE_APP_HOST: local.ir-engine.org
     VITE_APP_PORT: "3000"
-    VITE_FILE_SERVER: https://localhost:9000/etherealengine-microk8s-static-resources
-    VITE_SERVER_HOST: api-local.etherealengine.org
+    VITE_FILE_SERVER: https://localhost:9000/ir-engine-microk8s-static-resources
+    VITE_SERVER_HOST: api-local.ir-engine.org
     VITE_SERVER_PORT: "3030"
-    VITE_INSTANCESERVER_HOST: instanceserver-local.etherealengine.org
+    VITE_INSTANCESERVER_HOST: instanceserver-local.ir-engine.org
     VITE_INSTANCESERVER_PORT: "3031"
     SOURCE_REPO_URL: <SOURCE_REPO_URL>
     SOURCE_REPO_NAME_STEM: <DESTINATION_REPO_NAME_STEM>
@@ -117,14 +117,14 @@ api:
     DESTINATION_REPO_PROVIDER: <DESTINATION_REPO_PROVIDER>
     USE_IPFS: "true"
   image:
-    repository: localhost:32000/etherealengine
+    repository: localhost:32000/ir-engine
     pullPolicy: IfNotPresent
   ingress:
     annotations:
       kubernetes.io/ingress.class: public
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       nginx.ingress.kubernetes.io/enable-cors: "false"
-#      nginx.ingress.kubernetes.io/cors-allow-origin: https://local.etherealengine.org
+#      nginx.ingress.kubernetes.io/cors-allow-origin: https://local.ir-engine.org
       nginx.ingress.kubernetes.io/proxy-body-size: 256m
       nginx.ingress.kubernetes.io/proxy-buffer-size: 16k
       nginx.ingress.kubernetes.io/affinity: cookie
@@ -152,7 +152,7 @@ api:
           proxy_pass $saved_redirect_location;
         }
     hosts:
-      - host: api-local.etherealengine.org
+      - host: api-local.ir-engine.org
         paths:
           - /
 
@@ -176,17 +176,17 @@ media:
         secret_access_key: password
       s3:
         endpoint: https://10.0.1.1:9000
-        static_resource_bucket: etherealengine-microk8s-static-resources
+        static_resource_bucket: ir-engine-microk8s-static-resources
       sns:
         access_key_id: <SNS_USER_ACCESS_KEY>
         application_id: <SNS_APPLICATION_ID>
         region: <SNS_REGION>
         secret_access_key: <SNS_USER_SECRET_KEY>
         sender_id: <SNS_SENDER_ID>
-    host: https://local.etherealengine.org/
+    host: https://local.ir-engine.org/
   extraEnv:
-    APP_HOST: local.etherealengine.org
-    APP_URL: https://local.etherealengine.org
+    APP_HOST: local.ir-engine.org
+    APP_URL: https://local.ir-engine.org
     AUTH_SECRET: <AUTH_SECRET_UUID_OR_SIMILAR>
     AWS_SMS_ACCESS_KEY_ID: <SNS_USER_ACCESS_KEY>
     AWS_SMS_REGION: <SNS_REGION>
@@ -195,23 +195,23 @@ media:
     CERT: certs/cert.pem
     KEY: certs/key.pem
     CORS_SERVER_PORT: "3036"
-    FACEBOOK_CALLBACK_URL: https://local.etherealengine.org/auth/oauth/facebook
+    FACEBOOK_CALLBACK_URL: https://local.ir-engine.org/auth/oauth/facebook
     FACEBOOK_CLIENT_ID: "<FACEBOOK_CLIENT_ID>"
     FACEBOOK_CLIENT_SECRET: "<FACEBOOK_CLIENT_SECRET>"
     FORCE_DB_REFRESH: "false"
-    INSTANCESERVER_DOMAIN: instanceserver-local.etherealengine.org
-    GITHUB_CALLBACK_URL: https://local.etherealengine.org/auth/oauth/github
+    INSTANCESERVER_DOMAIN: instanceserver-local.ir-engine.org
+    GITHUB_CALLBACK_URL: https://local.ir-engine.org/auth/oauth/github
     GITHUB_CLIENT_ID: "<GITHUB_CLIENT_ID>"
     GITHUB_CLIENT_SECRET: "<GITHUB_CLIENT_SECRET>"
-    GOOGLE_CALLBACK_URL: https://local.etherealengine.org/auth/oauth/google
+    GOOGLE_CALLBACK_URL: https://local.ir-engine.org/auth/oauth/google
     GOOGLE_CLIENT_ID: "<GOOGLE_CLIENT_ID>"
     GOOGLE_CLIENT_SECRET: "<GOOGLE_CLIENT_SECRET>"
     LOCAL: "true"
     MAGICLINK_EMAIL_SUBJECT: Login to Ethereal Engine
-    MAIL_FROM: info@login.etherealengine.com
-    SERVER_HOST: "api-local.etherealengine.org"
+    MAIL_FROM: info@login.ir-engine.com
+    SERVER_HOST: "api-local.ir-engine.org"
     SERVER_PORT: "3030"
-    SMTP_FROM_EMAIL: info@login.etherealengine.com
+    SMTP_FROM_EMAIL: info@login.ir-engine.com
     SMTP_FROM_NAME: noreply
     SMTP_HOST: email-smtp.<SMTP_REGION>.amazonaws.com
     SMTP_PASS: <SMTP_PASSWORD>
@@ -226,23 +226,23 @@ media:
     STORAGE_AWS_ACCESS_KEY_SECRET: "password" #<S3_USER_SECRET_KEY>
     STORAGE_S3_ENDPOINT: https://10.0.1.1:9000 #<S3_ENDPOINT>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-microk8s-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: ir-engine-microk8s-static-resources #<S3_BUCKET_NAME>
     STORAGE_S3_DEV_MODE: local
-    VITE_FILE_SERVER: https://10.0.1.1:9000/etherealengine-microk8s-static-resources
+    VITE_FILE_SERVER: https://10.0.1.1:9000/ir-engine-microk8s-static-resources
   image:
-    repository: localhost:32000/etherealengine
+    repository: localhost:32000/ir-engine
     pullPolicy: IfNotPresent
   ingress:
     annotations:
       kubernetes.io/ingress.class: public
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       nginx.ingress.kubernetes.io/enable-cors: "true"
-      nginx.ingress.kubernetes.io/cors-allow-origin: https://local.etherealengine.org
+      nginx.ingress.kubernetes.io/cors-allow-origin: https://local.ir-engine.org
       nginx.ingress.kubernetes.io/proxy-body-size: 5m
       nginx.ingress.kubernetes.io/affinity: cookie
       nginx.ingress.kubernetes.io/affinity-mode: persistent
     hosts:
-      - host: api-local.etherealengine.org
+      - host: api-local.ir-engine.org
         paths:
           - /video
   service:
@@ -253,12 +253,12 @@ release:
 
 instanceserver:
   image:
-    repository: localhost:32000/etherealengine
+    repository: localhost:32000/ir-engine
     pullPolicy: IfNotPresent
   extraEnv:
-    APP_HOST: local.etherealengine.org
+    APP_HOST: local.ir-engine.org
     AUTH_SECRET: <AUTH_SECRET_UUID_OR_SIMILAR>
-    APP_URL: https://local.etherealengine.org
+    APP_URL: https://local.ir-engine.org
     CERT: certs/cert.pem
     KEY: certs/key.pem
     INSTANCESERVER_PORT: "3031"
@@ -269,7 +269,7 @@ instanceserver:
     RTC_END_PORT: "40099"
     RTC_PORT_BLOCK_SIZE: "100"
     LOCAL: "true"
-    INSTANCESERVER_DOMAIN: instanceserver-local.etherealengine.org
+    INSTANCESERVER_DOMAIN: instanceserver-local.ir-engine.org
     INSTANCESERVER_MODE: "realtime"
     STORAGE_PROVIDER: s3
     STORAGE_PROVIDER_EXTERNAL_ENDPOINT: "https://10.0.1.1:9000"
@@ -280,13 +280,13 @@ instanceserver:
     STORAGE_AWS_ACCESS_KEY_SECRET: "password" #<S3_USER_SECRET_KEY>
     STORAGE_S3_ENDPOINT: https://10.0.1.1:9000 #<S3_ENDPOINT>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-microk8s-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: ir-engine-microk8s-static-resources #<S3_BUCKET_NAME>
     STORAGE_S3_DEV_MODE: local
-    TS_NODE_IGNORE: (?:^|\/)node_modules\/(?!(@etherealengine))
-    VITE_FILE_SERVER: https://10.0.1.1:9000/etherealengine-microk8s-static-resources
+    TS_NODE_IGNORE: (?:^|\/)node_modules\/(?!(@ir-engine))
+    VITE_FILE_SERVER: https://10.0.1.1:9000/ir-engine-microk8s-static-resources
   ingress:
     disabled: false
-    host: instanceserver-local.etherealengine.org
+    host: instanceserver-local.ir-engine.org
     annotations:
       kubernetes.io/ingress.class: public
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
@@ -330,14 +330,14 @@ builder:
     STORAGE_CLOUDFRONT_DOMAIN: <CLOUDFRONT_DOMAIN>
     STORAGE_CLOUDFRONT_DISTRIBUTION_ID: <CLOUDFRONT_DISTRIBUTION_ID>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-microk8s-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: ir-engine-microk8s-static-resources #<S3_BUCKET_NAME>
     STORAGE_S3_AVATAR_DIRECTORY: avatars
-    VITE_APP_HOST: local.etherealengine.org
+    VITE_APP_HOST: local.ir-engine.org
     VITE_APP_PORT: "3000"
-    VITE_SERVER_HOST: api-local.etherealengine.org
+    VITE_SERVER_HOST: api-local.ir-engine.org
     VITE_SERVER_PORT: "3030"
-    VITE_FILE_SERVER: https://localhost:9000/etherealengine-microk8s-static-resources
-    VITE_INSTANCESERVER_HOST: instanceserver-local.etherealengine.org
+    VITE_FILE_SERVER: https://localhost:9000/ir-engine-microk8s-static-resources
+    VITE_INSTANCESERVER_HOST: instanceserver-local.ir-engine.org
     VITE_INSTANCESERVER_PORT: "3031"
     VITE_ROOT_REDIRECT: "false"
     VITE_READY_PLAYER_ME_URL: https://xre.readyplayer.me
@@ -354,14 +354,14 @@ builder:
     
 testbot:
   extraEnv:
-    APP_HOST: local.etherealengine.org
+    APP_HOST: local.ir-engine.org
   image:
-    repository: localhost:32000/etherealengine-testbot
+    repository: localhost:32000/ir-engine-testbot
     pullPolicy: IfNotPresent
 
 batchinvalidator:
   enabled: false
-  name: etherealengine-batchinvalidator
+  name: ir-engine-batchinvalidator
   image:
     repository: <SOURCE_REPO_URL>/<SOURCE_REPO_NAME_STEM>-api
   extraEnv:

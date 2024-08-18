@@ -14,6 +14,6 @@ Thank you for installing IPFS by Ethereal Engine
 {{- end }}
 
 We would love to hear your feedback:
-- contact us on https://etherealengine.org/
+- contact us on https://ir-engine.org/
 - join our Discord on https://discord.gg/xrf
 

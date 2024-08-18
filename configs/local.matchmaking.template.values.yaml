@@ -1,17 +1,17 @@
 director:
   image:
-    repository: etherealengine-matchmaking-director
+    repository: ir-engine-matchmaking-director
     pullPolicy: IfNotPresent
 
 matchfunction:
   labels:
-    app: etherealengine-matchmaking
+    app: ir-engine-matchmaking
     component: matchfunction
   selectorLabels:
-    app: etherealengine-matchmaking
+    app: ir-engine-matchmaking
     component: matchfunction
   image:
-    repository: etherealengine-matchmaking-matchfunction
+    repository: ir-engine-matchmaking-matchfunction
     pullPolicy: IfNotPresent
 
 release:

@@ -1,6 +1,6 @@
 # Rippled
 
-Rippled charts for [Ethereal Engine](https://etherealengine.org/).
+Rippled charts for [Ethereal Engine](https://ir-engine.org/).
 
 ## Installing the Chart
 
