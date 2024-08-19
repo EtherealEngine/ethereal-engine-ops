@@ -1,4 +1,4 @@
-Thank you for installing IPFS by Ethereal Engine
+Thank you for installing IPFS by Infinite Reality Engine
 
 1. Get the application URL by running these commands:
 {{- if .Values.ingress.enabled }}

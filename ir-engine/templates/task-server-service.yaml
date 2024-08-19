@@ -1,0 +1,17 @@
+{{- if (.Values.taskserver).enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "ir-engine.taskserver.fullname" . }}
+  labels:
+    {{- include "ir-engine.taskserver.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.taskserver.service.type }}
+  ports:
+    - port: {{ .Values.taskserver.service.port }}
+      targetPort: {{ .Values.taskserver.service.port }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "ir-engine.taskserver.selectorLabels" . | nindent 4 }}
+{{- end -}}

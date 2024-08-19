@@ -1,7 +1,7 @@
 
 set -e
 # before you run this you need to run 
-# $ source .etherealengine-secrets to load tokens and passwords
+# $ source .ir-engine-secrets to load tokens and passwords
 
 cd ../client
 
@@ -12,11 +12,11 @@ cd ../ops
 
 export NEW_TAG=rc0.0.5
 docker-compose -f docker-compose-local.yml build
-docker login --username etherealengine --password ${DOCKER_HUB_PASSWORD}
+docker login --username ir-engine --password ${DOCKER_HUB_PASSWORD}
 
 for repo in {client,server,realtime-server}; do
     for tag in {$TAG,latest}; do
-        docker tag etherealengine/${repo} etherealengine/${repo}:${tag}
-        docker push etherealengine/${repo}:${tag}
+        docker tag ir-engine/${repo} ir-engine/${repo}:${tag}
+        docker push ir-engine/${repo}:${tag}
     done
 done 

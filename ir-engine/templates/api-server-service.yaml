@@ -1,0 +1,21 @@
+{{- if (.Values.api).enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "ir-engine.api.fullname" . }}
+  labels:
+    {{- include "ir-engine.api.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.api.service.type }}
+  ports:
+    - port: {{ .Values.api.service.port }}
+      targetPort: {{ .Values.api.service.port }}
+      protocol: TCP
+      name: api-http
+    - port: {{ .Values.client.service.port }}
+      targetPort: {{ .Values.client.service.port }}
+      protocol: TCP
+      name: client-http
+  selector:
+    {{- include "ir-engine.api.selectorLabels" . | nindent 4 }}
+{{- end -}}

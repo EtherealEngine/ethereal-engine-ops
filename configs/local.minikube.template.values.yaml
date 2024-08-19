@@ -6,16 +6,16 @@ client:
     HOST_PORT: "3000"
     NODE_ENV: production
     SITE_DESC: Connected Worlds for Everyone
-    SITE_TITLE: Ethereal Engine
+    SITE_TITLE: Infinite Reality Engine
     VITE_APP_HOST: local.etherealengine.org
     VITE_APP_PORT: "3000"
-    VITE_FILE_SERVER: https://localhost:9000/etherealengine-minikube-static-resources
+    VITE_FILE_SERVER: https://localhost:9000/ir-engine-minikube-static-resources
     VITE_SERVER_HOST: api-local.etherealengine.org
     VITE_SERVER_PORT: "3030"
     VITE_INSTANCESERVER_HOST: instanceserver-local.etherealengine.org
     VITE_INSTANCESERVER_PORT: "3031"
   image:
-    repository: etherealengine
+    repository: ir-engine
     pullPolicy: IfNotPresent
   ingress:
     annotations:
@@ -30,7 +30,7 @@ client:
 domain: etherealengine.org
 clusterType: minikube
 sql:
-  database: etherealengine
+  database: ir-engine
   password: password
   user: server
   host: host.minikube.internal
@@ -46,7 +46,7 @@ api:
         secret_access_key: password
       s3:
         endpoint: https://host.minikube.internal:9000
-        static_resource_bucket: etherealengine-minikube-static-resources
+        static_resource_bucket: ir-engine-minikube-static-resources
       sns:
         access_key_id: <SNS_USER_ACCESS_KEY>
         application_id: <SNS_APPLICATION_ID>
@@ -79,13 +79,13 @@ api:
     GOOGLE_CLIENT_ID: "<GOOGLE_CLIENT_ID>"
     GOOGLE_CLIENT_SECRET: "<GOOGLE_CLIENT_SECRET>"
     LOCAL: "true"
-    MAGICLINK_EMAIL_SUBJECT: Login to Ethereal Engine
-    MAIL_FROM: info@login.etherealengine.com
+    MAGICLINK_EMAIL_SUBJECT: Login to Infinite Reality Engine
+    MAIL_FROM: info@login.ir-engine.com
     SERVE_CLIENT_FROM_STORAGE_PROVIDER: "true"
     SERVER_HOST: "api-local.etherealengine.org"
     SERVER_MODE: "api"
     SERVER_PORT: "3030"
-    SMTP_FROM_EMAIL: info@login.etherealengine.com
+    SMTP_FROM_EMAIL: info@login.ir-engine.com
     SMTP_FROM_NAME: noreply
     SMTP_HOST: email-smtp.<SMTP_REGION>.amazonaws.com
     SMTP_PASS: <SMTP_PASSWORD>
@@ -100,7 +100,7 @@ api:
     STORAGE_AWS_ACCESS_KEY_SECRET: "password" #<S3_USER_SECRET_KEY>
     STORAGE_S3_ENDPOINT: https://localhost:9000 #<S3_ENDPOINT>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-minikube-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: ir-engine-minikube-static-resources #<S3_BUCKET_NAME>
     STORAGE_S3_DEV_MODE: local
     SOURCE_REPO_URL: <SOURCE_REPO_URL>
     SOURCE_REPO_NAME_STEM: <DESTINATION_REPO_NAME_STEM>
@@ -110,14 +110,14 @@ api:
     DESTINATION_REPO_PROVIDER: <DESTINATION_REPO_PROVIDER>
     VITE_APP_HOST: local.etherealengine.org
     VITE_APP_PORT: "3000"
-    VITE_FILE_SERVER: https://localhost:9000/etherealengine-minikube-static-resources
+    VITE_FILE_SERVER: https://localhost:9000/ir-engine-minikube-static-resources
     VITE_SERVER_HOST: api-local.etherealengine.org
     VITE_SERVER_PORT: "3030"
     VITE_INSTANCESERVER_HOST: instanceserver-local.etherealengine.org
     VITE_INSTANCESERVER_PORT: "3031"
     USE_IPFS: "true"
   image:
-    repository: etherealengine
+    repository: ir-engine
     pullPolicy: IfNotPresent
   ingress:
     annotations:
@@ -177,7 +177,7 @@ media:
         secret_access_key: password
       s3:
         endpoint: https://host.minikube.internal:9000
-        static_resource_bucket: etherealengine-minikube-static-resources
+        static_resource_bucket: ir-engine-minikube-static-resources
       sns:
         access_key_id: <SNS_USER_ACCESS_KEY>
         application_id: <SNS_APPLICATION_ID>
@@ -208,11 +208,11 @@ media:
     GOOGLE_CLIENT_ID: "<GOOGLE_CLIENT_ID>"
     GOOGLE_CLIENT_SECRET: "<GOOGLE_CLIENT_SECRET>"
     LOCAL: "true"
-    MAGICLINK_EMAIL_SUBJECT: Login to Ethereal Engine
-    MAIL_FROM: info@login.etherealengine.com
+    MAGICLINK_EMAIL_SUBJECT: Login to Infinite Reality Engine
+    MAIL_FROM: info@login.ir-engine.com
     SERVER_HOST: "api-local.etherealengine.org"
     SERVER_PORT: "3030"
-    SMTP_FROM_EMAIL: info@login.etherealengine.com
+    SMTP_FROM_EMAIL: info@login.ir-engine.com
     SMTP_FROM_NAME: noreply
     SMTP_HOST: email-smtp.<SMTP_REGION>.amazonaws.com
     SMTP_PASS: <SMTP_PASSWORD>
@@ -227,11 +227,11 @@ media:
     STORAGE_AWS_ACCESS_KEY_SECRET: "password" #<S3_USER_SECRET_KEY>
     STORAGE_S3_ENDPOINT: https://host.minikube.internal:9000 #<S3_ENDPOINT>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-minikube-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: ir-engine-minikube-static-resources #<S3_BUCKET_NAME>
     STORAGE_S3_DEV_MODE: local
     VITE_FILE_SERVER: https://host.minikube.internal:9000
   image:
-    repository: etherealengine
+    repository: ir-engine
     pullPolicy: IfNotPresent
   ingress:
     annotations:
@@ -254,7 +254,7 @@ release:
 
 instanceserver:
   image:
-    repository: etherealengine
+    repository: ir-engine
     pullPolicy: IfNotPresent
   extraEnv:
     APP_HOST: local.etherealengine.org
@@ -281,10 +281,10 @@ instanceserver:
     STORAGE_AWS_ACCESS_KEY_SECRET: "password" #<S3_USER_SECRET_KEY>
     STORAGE_S3_ENDPOINT: https://host.minikube.internal:9000 #<S3_ENDPOINT>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-minikube-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: ir-engine-minikube-static-resources #<S3_BUCKET_NAME>
     STORAGE_S3_DEV_MODE: local
-    TS_NODE_IGNORE: (?:^|\/)node_modules\/(?!(@etherealengine))
-    VITE_FILE_SERVER: https://host.minikube.internal:9000/etherealengine-minikube-static-resources
+    TS_NODE_IGNORE: (?:^|\/)node_modules\/(?!(@ir-engine))
+    VITE_FILE_SERVER: https://host.minikube.internal:9000/ir-engine-minikube-static-resources
   ingress:
     disabled: false
     host: instanceserver-local.etherealengine.org
@@ -331,13 +331,13 @@ builder:
     STORAGE_CLOUDFRONT_DOMAIN: <CLOUDFRONT_DOMAIN>
     STORAGE_CLOUDFRONT_DISTRIBUTION_ID: <CLOUDFRONT_DISTRIBUTION_ID>
     STORAGE_S3_REGION: <S3_REGION>
-    STORAGE_S3_STATIC_RESOURCE_BUCKET: etherealengine-minikube-static-resources #<S3_BUCKET_NAME>
+    STORAGE_S3_STATIC_RESOURCE_BUCKET: ir-engine-minikube-static-resources #<S3_BUCKET_NAME>
     STORAGE_S3_AVATAR_DIRECTORY: avatars
     VITE_APP_HOST: local.etherealengine.org
     VITE_APP_PORT: "3000"
     VITE_SERVER_HOST: api-local.etherealengine.org
     VITE_SERVER_PORT: "3030"
-    VITE_FILE_SERVER: https://localhost:9000/etherealengine-minikube-static-resources
+    VITE_FILE_SERVER: https://localhost:9000/ir-engine-minikube-static-resources
     VITE_INSTANCESERVER_HOST: instanceserver-local.etherealengine.org
     VITE_INSTANCESERVER_PORT: "3031"
     VITE_ROOT_REDIRECT: "false"
@@ -357,12 +357,12 @@ testbot:
   extraEnv:
     APP_HOST: local.etherealengine.org
   image:
-    repository: etherealengine-testbot
+    repository: ir-engine-testbot
     pullPolicy: IfNotPresent
 
 batchinvalidator:
   enabled: false
-  name: etherealengine-batchinvalidator
+  name: ir-engine-batchinvalidator
   image:
     repository: <SOURCE_REPO_URL>/<SOURCE_REPO_NAME_STEM>-api
   extraEnv:

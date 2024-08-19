@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ include "ir-engine.matchmaking-namespace" . }}
+  labels:
+    app: {{ include "ir-engine.matchmaking-namespace" . }}
+    release: {{ .Release.Name }}

@@ -9,9 +9,9 @@ helm repo add stable https://kubernetes-charts.storage.googleapis.com
 helm repo update
 helm install nginx1 nginx-stable/nginx-ingress
 
-aws eks describe-cluster --name etherealengine-demo > ~/.kube/etherealengine.yaml
-export KUBECONFIG=/home/${USER}/.kube/etherealengine.yaml
+aws eks describe-cluster --name ir-engine-demo > ~/.kube/ir-engine.yaml
+export KUBECONFIG=/home/${USER}/.kube/ir-engine.yaml
 echo $KUBECONFIG
 
 # get dependencies
-helm dep update etherealengine
+helm dep update ir-engine

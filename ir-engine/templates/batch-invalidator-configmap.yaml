@@ -1,0 +1,12 @@
+{{- if (.Values.batchinvalidator).enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "ir-engine.batchinvalidator.fullname" . }}
+  labels:
+    {{- include "ir-engine.batchinvalidator.labels" . | nindent 4 }}
+data:
+{{- if .Values.batchinvalidator.extraEnv }}
+{{ toYaml .Values.batchinvalidator.extraEnv | indent 2 }}
+{{- end }}
+{{- end -}}

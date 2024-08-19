@@ -1,6 +1,6 @@
 apiVersion: v2
 name: rippled
-description: A Helm chart of rippled server by Ethereal Engine
+description: A Helm chart of rippled server by Infinite Reality Engine
 type: application
 appVersion: "1.8.4"
 
